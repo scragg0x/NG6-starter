@@ -20,7 +20,8 @@ config.plugins = config.plugins.concat([
       // angular global variable, so we should keep it unchanged
       except: ['$super', '$', 'exports', 'require', 'angular']
     }
-  })
+  }),
+  new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
 ]);
 
 module.exports = config;
