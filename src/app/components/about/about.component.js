@@ -6,7 +6,7 @@ const aboutComponent = {
   restrict: 'E',
   bindings: {},
   template,
-  controller
+  controller,
 };
 
 export default aboutComponent;

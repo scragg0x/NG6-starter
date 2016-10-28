@@ -3,17 +3,17 @@ import uiRouter from 'angular-ui-router';
 import homeComponent from './home.component';
 
 const homeModule = angular.module('home', [
-  uiRouter
+  uiRouter,
 ])
   .config(($stateProvider, $urlRouterProvider) => {
-    "ngInject";
+    'ngInject';
 
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
       .state('home', {
         url: '/',
-        component: 'home'
+        component: 'home',
       });
   })
   .component('home', homeComponent)

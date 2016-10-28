@@ -3,7 +3,7 @@ import './app.styl';
 
 const appComponent = {
   template,
-  restrict: 'E'
+  restrict: 'E',
 };
 
 export default appComponent;

@@ -2,11 +2,11 @@ import template from './hero.html';
 import controller from './hero.controller';
 import './hero.styl';
 
-let heroComponent = {
+const heroComponent = {
   restrict: 'E',
   bindings: {},
   template,
-  controller
+  controller,
 };
 
 export default heroComponent;
