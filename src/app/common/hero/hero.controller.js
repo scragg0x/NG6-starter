@@ -1,6 +1,9 @@
 class HeroController {
-  constructor() {
-    this.name = 'hero';
+  constructor($scope) {
+    'ngInject';
+    $scope.$on('search', (e, query) => {
+      this.name = query;
+    });
   }
 }
 
