@@ -6,4 +6,3 @@ node_modules
 *.log
 dist/
 .idea
-yarn.lock
