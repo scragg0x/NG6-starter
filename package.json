@@ -47,9 +47,9 @@
     "yargs": "^6.6.0"
   },
   "scripts": {
-    "build": "webpack --progress --config ./config/webpack.prod.config.js",
-    "serve": "webpack-dev-server --progress --config ./config/webpack.dev.config.js",
-    "start": "webpack-dev-server --progress --config ./config/webpack.dev.config.js",
+    "build": "webpack --progress",
+    "serve": "webpack-dev-server --progress",
+    "start": "webpack-dev-server --progress",
     "test": "karma start",
     "component": "gulp component"
   },

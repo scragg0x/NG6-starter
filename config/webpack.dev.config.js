@@ -1,28 +1,27 @@
-var webpack = require('webpack');
-var path    = require('path');
-var config  = require('../webpack.config');
+const path = require('path');
+const webpack = require('webpack');
+const WebpackConfig = require('webpack-config').default;
 
-config.output = {
-  filename: '[name].bundle.js',
-  path: path.resolve(__dirname, '..', 'client')
-};
+module.exports = new WebpackConfig().extend('./config/webpack.base.config.js').merge({
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, '..', 'src')
+  },
 
-config.devServer = {
-  port: 3000,
-  contentBase: '../client',
-  hot: true,
-  stats: { colors: true },
-  inline: true,
-  historyApiFallback: true
-};
+  devServer: {
+    port: 3000,
+    contentBase: '../src',
+    hot: true,
+    stats: {colors: true},
+    inline: true,
+    historyApiFallback: true
+  },
 
-config.plugins = config.plugins.concat([
-
-  // Adds webpack HMR support. It act's like livereload,
-  // reloading page after webpack rebuilt modules.
-  // It also updates stylesheets and inline assets without page reloading.
-  new webpack.HotModuleReplacementPlugin(),
-  new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' })
-]);
-
-module.exports = config;
+  plugins: [
+    // Adds webpack HMR support. It act's like livereload,
+    // reloading page after webpack rebuilt modules.
+    // It also updates stylesheets and inline assets without page reloading.
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({'process.env.NODE_ENV': '"development"'})
+  ],
+});
