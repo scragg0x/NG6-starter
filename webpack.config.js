@@ -7,20 +7,20 @@ module.exports = {
   entry: {
     app: [
       'babel-polyfill',
-      path.join(__dirname, 'client', 'app/app.js')
+      path.join(__dirname, process.env.npm_package_main)
     ]
   },
   module: {
     loaders: [
-      { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },
-      { test: /\.html$/, loader: 'raw' },
-      { test: /\.styl$/, loader: 'style!css!stylus' },
-      { test: /\.css$/, loader: 'style!css' },
-      { test: /\.(scss|sass)$/, loader: 'style!css!sass' },
-      { test: /\.less$/, loader: 'style!css!less' },
+      { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate-loader!babel-loader' },
+      { test: /\.html$/, loader: 'raw-loader' },
+      { test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader' },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.(scss|sass)$/, loader: 'style-loader!css-loader!sass-loader' },
+      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
       {
         test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?$/,
-        loader: 'file',
+        loader: 'file-loader',
         query: {
           name: 'static/media/[name].[ext]',
         },
