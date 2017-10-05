@@ -11,7 +11,7 @@ switch (TARGET) {
     break;
 
   default:
-    webpackConfig = './config/webpack.production.config.js';
+    webpackConfig = './config/webpack.prod.config.js';
     break;
 }
 

@@ -1,6 +1,6 @@
 class NavbarController {
   constructor($rootScope) {
-    'ngInject'
+    'ngInject';
     this.handleSearch = () => {
       $rootScope.$broadcast('search', this.query);
     };

@@ -1,17 +1,12 @@
-'use strict';
-
-import gulp     from 'gulp';
-import webpack  from 'webpack';
-import path     from 'path';
-import rename   from 'gulp-rename';
+import gulp from 'gulp';
+import path from 'path';
+import rename from 'gulp-rename';
 import template from 'gulp-template';
-import fs       from 'fs';
-import yargs    from 'yargs';
-import lodash   from 'lodash';
+import yargs from 'yargs';
 
-let root = 'src';
+const root = 'src';
 
-let resolveToComponents = (glob = '') => {
+const resolveToComponents = (glob = '') => {
   return path.join(root, 'app/components', glob); // app/components/{glob}
 };
 

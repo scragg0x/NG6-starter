@@ -13,7 +13,7 @@ module.exports = new WebpackConfig().merge({
   },
   module: {
     loaders: [
-      { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate-loader!babel-loader' },
+      { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'babel-loader' },
       { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
